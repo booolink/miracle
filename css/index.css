@@ -1,0 +1,293 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: '微軟正黑體';
+    margin: 0;
+    padding: 0;
+}
+ul,li{
+   
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+p,h1,h2,h3,h5,ul,li{
+    margin: 0;
+    padding: 0;
+}
+a{
+    font-weight: 700;
+    
+}
+/* /*********************************** */
+.nav{
+    position: relative;
+    width: 100%;
+}
+.navbar{
+    width: 98%;
+    display: flex;
+    margin: auto;
+    padding-top:15px 
+}
+.navcontrl{
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    background-color:#ffffff13;
+    box-shadow: 0px 0px 5px #585858;
+}
+.logo{
+   min-width: 150px;
+   height: 40px;
+   display: inline-block;
+   background-image: url('../images/logo-white.png');
+   background-size: contain;
+   background-repeat: no-repeat;
+}
+.navul_list{
+  width: 810px;
+  height: 75px;
+  margin: auto;
+  display: flex;
+  padding: 10px 20px;
+  justify-content: space-between;
+ 
+}
+.nav_li{
+  width: 100px;
+  text-align: center;
+}
+.nav_a{
+    color:white;
+}
+.nav_li:hover .bg_line{
+    animation: navli_ani 200mS ;
+    animation-fill-mode: forwards;  
+}
+.bg_line{
+    height: 60%; 
+}
+#img{
+    width: 100%;
+    height: 750px;
+    background-image: url('../images/banner_bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;   
+}
+.img_but{
+    width: 100px;
+    height: 40px;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 35px;
+    background-color: #e84185; 
+}
+.navbartext,.nav_li6_lia{
+    color: white;
+}
+
+@keyframes navli_ani{
+    0%{
+    width: 0%;
+    border-bottom: 2px solid white;
+}
+  100%{
+    width: 100%;
+    border-bottom: 2px solid white;
+}
+}
+#nav_li6{
+    position: relative;
+}
+
+.nav_li6_ul{
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    /* background-color: rgba(255, 255, 255, 0.062); */
+    /*橢圓形漸層ellipse & 圓形漸層circle , (中心點), (外圈)*/
+    /* background: radial-gradient(ellipse,rgba(255, 255, 255, 0),rgba(255, 255, 255, 0.178)); */
+    /*線性漸層 linear-gradien,to 方向 (頭),(尾)*/
+    background: linear-gradient(to bottom,rgba(190, 190, 190, 0.14),rgba(255, 255, 255, 0));
+    display: none;
+}
+.nav_li6_li{
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding-top:9px ;
+    color: white;
+}
+#nav_li6:hover .nav_li6_ul{
+    display: block;
+    animation: nav_li6_ul_ani 400mS ;
+    animation-fill-mode: forwards; 
+}
+@keyframes nav_li6_ul_ani{
+    0%{
+       line-height:0%;
+       height: 0px;
+    }
+      100%{
+       line-height:100%;
+       height: 130px;
+    }
+}
+.nav_li6_li:hover .nav_li6_li_bg{
+    animation: li6_li_bg_ani 200mS ;
+    animation-fill-mode: forwards;  
+}
+.nav_li6_li_bg{
+    height: 8px;
+    margin: auto;
+    
+}
+@keyframes li6_li_bg_ani{
+    0%{
+        width: 0%;
+        border-bottom: 0.3px solid white;
+    }
+      100%{
+        width: 75%;
+        border-bottom: 0.3px solid white;
+    }
+}
+/*----------------box1 內文字------------------------------*/ 
+.bannertext{
+    width: 80%;
+    margin: auto;
+    padding-top: 150px;
+    color: white;
+}
+#bannertext1{
+    font-size: 70px;
+}
+#bannertext2{
+    font-size: 60px;
+}
+#bannertext3{
+    font-size: 30px;
+}
+#bannertext4{
+    font-size: 35px;
+}
+#bannertext5{
+    font-size: 25px;
+    color: #ffcc00;
+}
+#h3_color{
+    color: #f7a118;
+}
+#yy{
+    font-size: 80px;
+}
+/*----------------box2------------------------------*/ 
+.bisnislogo{
+    width: 100%;
+    height: 350px;
+}
+.title_all{
+    width: 85%;
+    height: 100%;
+    margin: auto;
+    padding: 75px 15px 50px;
+}
+.mttitle{
+    width: 130px;
+    float: left;
+}
+.mt_h2{
+    line-height: 40px;
+}
+.redbottom{
+    width: 40px;
+    height: 50px;
+    border-bottom: 4px solid #e84185;
+}
+.logo_all{
+    width: calc(100% - 130px - 10px);
+    padding:  0px 20px 0px 50px;
+    
+    /* background-color: #e84185; */
+    height: 100%;
+    float: right;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+}
+.logolist{
+    width: calc(100% / 5);
+    height: 60px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#logolist1{
+    background-image: url('../images/38d730f04f32304e.png');
+    
+}
+#logolist2{
+    background-image: url('../images/1540260633.png');
+   
+}
+#logolist3{
+    background-image: url('../images/1540260647.png');
+    
+}
+#logolist4{
+    background-image: url('../images/1540260566.png');
+   
+}
+#logolist5{
+    background-image: url('../images/1540260589.png');
+   
+}
+#logolist6{
+    background-image: url('../images/170125_Lab_Logo_1.png');
+   
+}
+#logolist7{
+    background-image: url('../images/170125_Lab_Logo_2.png');
+  
+}
+#logolist8{
+    background-image: url('../images/170125_Lab_Logo_3.png');
+   
+}
+#logolist9{
+    background-image: url('../images/170125_Lab_Logo_5.png');
+  
+}
+#logolist10{
+    background-image: url('../images/170125_Lab_Logo_6.png');
+  
+}
+#logolist11{
+    background-image: url('../images/1540260410.png');
+   
+}
+#logolist12{
+    background-image: url('../images/170125_Lab_Logo_7.png');
+  
+}
+#logolist13{
+    background-image: url('../images/170125_Lab_Logo_8.png');
+  
+}
+#logolist14{
+    background-image: url('../images/1540260606.png');
+   
+}
+/*----------------box2------------------------------*/ 
+.boxrun{
+width: 100%;
+height: 900px;
+}
+
+.bg_linr{
+    width: 100%;
+    height: 3px;
+}
