@@ -63,13 +63,19 @@ a{
 .nav_a{
     color:white;
 }
-.nav_li:hover .bg_line{
-    animation: navli_ani 200mS ;
+.nav_li:hover .bg_line_white{
+    animation: navli_ani_white 200mS ;
     animation-fill-mode: forwards;  
 }
+.nav_li:hover .bg_line_red{
+    animation: navli_ani_red 200mS ;
+    animation-fill-mode: forwards;  
+}
+
 .bg_line{
     height: 60%; 
 }
+
 #img{
     width: 100%;
     height: 750px;
@@ -89,7 +95,7 @@ a{
     color: white;
 }
 
-@keyframes navli_ani{
+@keyframes navli_ani_white{
     0%{
     width: 0%;
     border-bottom: 2px solid white;
@@ -97,6 +103,16 @@ a{
   100%{
     width: 100%;
     border-bottom: 2px solid white;
+}
+}
+@keyframes navli_ani_red{
+    0%{
+    width: 0%;
+    border-bottom: 2px solid #e84185;
+}
+  100%{
+    width: 100%;
+    border-bottom: 2px solid #e84185;
 }
 }
 #nav_li6{
@@ -136,8 +152,12 @@ a{
        height: 130px;
     }
 }
-.nav_li6_li:hover .nav_li6_li_bg{
-    animation: li6_li_bg_ani 200mS ;
+.nav_li6_li:hover .nav_li6_li_bg_white{
+    animation: li6_li_bg_ani_white 200mS ;
+    animation-fill-mode: forwards;  
+}
+.nav_li6_li:hover .nav_li6_li_bg_red{
+    animation: li6_li_bg_ani_red 200mS ;
     animation-fill-mode: forwards;  
 }
 .nav_li6_li_bg{
@@ -145,7 +165,7 @@ a{
     margin: auto;
     
 }
-@keyframes li6_li_bg_ani{
+@keyframes li6_li_bg_ani_white{
     0%{
         width: 0%;
         border-bottom: 0.3px solid white;
@@ -153,6 +173,16 @@ a{
       100%{
         width: 75%;
         border-bottom: 0.3px solid white;
+    }
+}
+@keyframes li6_li_bg_ani_red{
+    0%{
+        width: 0%;
+        border-bottom: 0.3px solid  #e84185;
+    }
+      100%{
+        width: 75%;
+        border-bottom: 0.3px solid  #e84185;
     }
 }
 /*----------------box1 內文字------------------------------*/ 

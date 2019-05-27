@@ -14,19 +14,19 @@
             <div class="navbar">
             <a class="logo" title="網頁設計" href="#"></a>
             <ul class="navul_list">
-                <li class="nav_li"><a class="nav_a" href="">公司簡介</a><div class="bg_line"></div></li>
-                <li class="nav_li"><a class="nav_a" href="">公關媒體</a><div class="bg_line"></div></li>
-                <li class="nav_li"><a class="nav_a" href="">客戶作品</a><div class="bg_line"></div></li>
-                <li class="nav_li"><a class="nav_a" href="">RWD網站</a><div class="bg_line"></div></li>
-                <li class="nav_li"><a class="nav_a" href="">方案價格</a><div class="bg_line"></div></li>
-                <li id="nav_li6"class="nav_li"><a class="nav_a" href="">服務項目</a><div class="bg_line"></div>
+                <li class="nav_li"><a class="nav_a" href="">公司簡介</a><div class="bg_line bg_line_white"></div></li>
+                <li class="nav_li"><a class="nav_a" href="">公關媒體</a><div class="bg_line bg_line_white"></div></li>
+                <li class="nav_li"><a class="nav_a" href="">客戶作品</a><div class="bg_line bg_line_white"></div></li>
+                <li class="nav_li"><a class="nav_a" href="">RWD網站</a><div class="bg_line bg_line_white"></div></li>
+                <li class="nav_li"><a class="nav_a" href="">方案價格</a><div class="bg_line bg_line_white"></div></li>
+                <li id="nav_li6"class="nav_li"><a class="nav_a" href="">服務項目</a><div class="bg_line bg_line_white"></div>
                     <ul class="nav_li6_ul">
-                        <li class="nav_li6_li"><a class="nav_li6_lia" href="">網頁設計</a><div class="nav_li6_li_bg"></div></li>
-                        <li class="nav_li6_li"><a class="nav_li6_lia" href="">廣告行銷</a><div class="nav_li6_li_bg"></div></li>
-                        <li class="nav_li6_li"><a class="nav_li6_lia" href="">CSI設計</a><div class="nav_li6_li_bg"></div></li>
+                        <li class="nav_li6_li"><a class="nav_li6_lia" href="">網頁設計</a><div class="nav_li6_li_bg nav_li6_li_bg_white"></div></li>
+                        <li class="nav_li6_li"><a class="nav_li6_lia" href="">廣告行銷</a><div class="nav_li6_li_bg nav_li6_li_bg_white"></div></li>
+                        <li class="nav_li6_li"><a class="nav_li6_lia" href="">CSI設計</a><div class="nav_li6_li_bg nav_li6_li_bg_white"></div></li>
                     </ul>
                 </li>
-                <li class="nav_li"><a class="nav_a" href="">聯絡我們</a><div class="bg_line"></div></li>
+                <li class="nav_li"><a class="nav_a" href="">聯絡我們</a><div class="bg_line bg_line_white"></div></li>
             </ul>
             <div class="nav_right">
             <h5 class="navbartext"><P>免付費電話</P></h5>
@@ -85,7 +85,7 @@
     <!-- //script -->
     <script>
     var navcolor = document.querySelector('.navcontrl')//nav底色
-
+    var bg_line = document.querySelectorAll('.bg_line') //menu底部滑動
 
     window.addEventListener('scroll',mmm)
     function mmm (e){
@@ -102,7 +102,14 @@
         document.querySelectorAll('.nav_li6_lia').forEach(fontcolor => { //下拉menu
             fontcolor.style.color="black"
         })
-      
+        document.querySelectorAll('.nav_li6_li_bg').forEach(fontcolor => { //下拉menu 滑動
+            fontcolor.classList.add('nav_li6_li_bg_red')
+            fontcolor.classList.remove('nav_li6_li_bg_white')
+        })
+        document.querySelectorAll('.bg_line').forEach(linecolor => { //menu底部滑動
+            linecolor.classList.add('bg_line_red')
+            linecolor.classList.remove('bg_line_white')
+        })
     }else{
         navcolor.style.backgroundColor= "#ffffff13"//nav底色
 
@@ -115,7 +122,15 @@
         document.querySelectorAll('.nav_li6_lia').forEach(fontcolor => { //下拉menu 
             fontcolor.style.color="white"
         })
-      
+        document.querySelectorAll('.nav_li6_li_bg').forEach(fontcolor => { //下拉menu 滑動
+            fontcolor.classList.add('nav_li6_li_bg_white')
+            fontcolor.classList.remove('nav_li6_li_bg_red')
+        })
+        document.querySelectorAll('.bg_line').forEach(linecolor => { //menu底部滑動
+           
+            linecolor.classList.remove('bg_line_red')
+            linecolor.classList.add('bg_line_white')
+        })
        
         }
     }
