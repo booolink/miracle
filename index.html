@@ -10,9 +10,12 @@
 <body>
     <!-- box1 -->
     <nav id="nav" class="nav">
-        <div class="navcontrl">
-            <div class="navbar">
-            <a class="logo" title="網頁設計" href="#"></a>
+        <div class="navcontrl">                
+            <a class="maslogo" title="網頁設計" href="#">
+                <div class="maslogo maslogo_w logo_img_w"></div>
+                <div class="maslogo maslogo_b "></div>
+            </a>    
+            <div class="navbar"> 
             <ul class="navul_list">
                 <li class="nav_li"><a class="nav_a" href="">公司簡介</a><div class="bg_line bg_line_white"></div></li>
                 <li class="nav_li"><a class="nav_a" href="">公關媒體</a><div class="bg_line bg_line_white"></div></li>
@@ -85,12 +88,18 @@
     <!-- //script -->
     <script>
     var navcolor = document.querySelector('.navcontrl')//nav底色
-    var bg_line = document.querySelectorAll('.bg_line') //menu底部滑動
-
+    var logo_chang_b = document.querySelector('.maslogo_b') //logo滑動
+    var logo_chang_w = document.querySelector('.maslogo_w')
     window.addEventListener('scroll',mmm)
+
+
     function mmm (e){
-    // console.log(e.pageY)
-    if(e.pageY >= 600){
+    console.log(e)
+    if(document.body.scrollTop > 600 || document.documentElement.scrollTop > 600){
+        
+        logo_chang_w.classList.add('logo_white')
+        logo_chang_b.classList.add('logo_black')
+
         navcolor.style.backgroundColor= "rgba(230, 228, 228, 0.952)"//nav底色
         
         document.querySelectorAll('.navbartext').forEach(fontcolor => { //右邊電話
@@ -111,6 +120,8 @@
             linecolor.classList.remove('bg_line_white')
         })
     }else{
+        
+
         navcolor.style.backgroundColor= "#ffffff13"//nav底色
 
         document.querySelectorAll('.navbartext').forEach(fontcolor => { //右邊電話 
@@ -122,12 +133,12 @@
         document.querySelectorAll('.nav_li6_lia').forEach(fontcolor => { //下拉menu 
             fontcolor.style.color="white"
         })
-        document.querySelectorAll('.nav_li6_li_bg').forEach(fontcolor => { //下拉menu 滑動
-            fontcolor.classList.add('nav_li6_li_bg_white')
-            fontcolor.classList.remove('nav_li6_li_bg_red')
+      
+        document.querySelectorAll('.nav_li6_li_bg').forEach(linecolor => { //下拉menu 滑動
+            linecolor.classList.add('nav_li6_li_bg_white')
+            linecolor.classList.remove('nav_li6_li_bg_red')
         })
         document.querySelectorAll('.bg_line').forEach(linecolor => { //menu底部滑動
-           
             linecolor.classList.remove('bg_line_red')
             linecolor.classList.add('bg_line_white')
         })
