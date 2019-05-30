@@ -21,6 +21,7 @@ a{
     font-weight: 700;
     
 }
+
 /* /*********************************** */
 .nav{
     position: relative;
@@ -34,63 +35,88 @@ a{
     background-color:#ffffff13;
     box-shadow: 0px 0px 5px #585858;
     display: flex;
+    justify-content: space-between;
 }
 .navbar{
-    width: calc(100% - 300px);
+    width: 65%;
     display: flex;
     margin: auto;
+    justify-content: space-between;
+   
 }
 /* 左方logo捲動 ******************************/
 .maslogo{
-    width: 150px;
+    width: 155px;
     height: 40px;
-    position: relative;
+    margin-left: 20px;
+  
 }
-.logo_img_w{
+.cut{ /*切除*/
+    width: 153px;
+    height: 40px;
+    position: absolute;
+    clip:rect(0px,150px,40px,0px);
+    
+}
+#logo_white{
+   width: 150px;
+   height: 40px;
    background-image: url('../images/logo-white.png');
    background-size: contain;
    background-repeat: no-repeat;
-   position: absolute;
+   position: absolute;  
 }
-.logo_black{
+#logo_white::before{
+    content: '';
+    position: absolute;
+    background-image: url('../images/logo_blk.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 150px;
+    height: 40px;
+    top: -2px;
+    left: 160px;
+}
+/* .logo_black{
+    width: 150px;
+    height: 40px;
     background-image: url('../images/logo_blk.png');
     background-size: contain;
     background-repeat: no-repeat; 
     position: absolute;
- }
+    left: 160px;
+ } */
 
-.logo_black{
-    animation: logo_black_ani 400ms linear;
+.logo_Left {
+    animation: logo_Left_ani 400ms linear;
+    animation-fill-mode: forwards;  
+ }
+ .logo_right {
+    animation: logo_right_ani 400ms linear;
     animation-fill-mode: forwards;  
  }
 
-.logo_white{
-   animation: logo_white_ani 400ms linear;
-   animation-fill-mode: forwards;  
+
+/*maslogo 向左滑動*/
+@keyframes logo_Left_ani{
+    0%{
+        left: 0px;
+    }
+    100%{
+        left:-161px;
+
+    }
+}
+/*maslogo 向右滑動*/
+@keyframes logo_right_ani{
+    0%{
+        left:-161px;
+    }
+    100%{
+        left: 0px;
+    }
 }
 
-/*logo_black_ani 向左新增黑色動畫*/
-@keyframes logo_black_ani{
-    0%{
-        left: 130px;
-        opacity: 0;
-    }
-    100%{
-        left: 0px;
-        opacity: 1;
-    }
-}
-/*logo_white_ani 向左移除白色動畫*/
-@keyframes logo_white_ani{
-    0%{
-        left: 0px;
-        opacity: 1;
-    }
-    100%{
-        left: -150px;
-        opacity: 0;
-    }
-}
 
 .navul_list{
   width: 100%;

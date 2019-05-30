@@ -12,9 +12,10 @@
     <nav id="nav" class="nav">
         <div class="navcontrl">                
             <a class="maslogo" title="網頁設計" href="#">
-                <div class="maslogo maslogo_w logo_img_w"></div>
-                <div class="maslogo maslogo_b "></div>
-            </a>    
+                <div class="cut">
+                <div id="logo_white" class=" "></div>
+               </div>
+               </a>    
             <div class="navbar"> 
             <ul class="navul_list">
                 <li class="nav_li"><a class="nav_a" href="">公司簡介</a><div class="bg_line bg_line_white"></div></li>
@@ -30,13 +31,13 @@
                     </ul>
                 </li>
                 <li class="nav_li"><a class="nav_a" href="">聯絡我們</a><div class="bg_line bg_line_white"></div></li>
-            </ul>
-            <div class="nav_right">
-            <h5 class="navbartext"><P>免付費電話</P></h5>
-            <h2 class="navbartext"><P>0800-587-888</P></h2>
-        </div>
+                </ul>
             </div>
-         </div>
+            <div class="nav_right">
+                <h5 class="navbartext"><P>免付費電話</P></h5>
+                <h2 class="navbartext"><P>0800-587-888</P></h2>
+                    </div>
+        </div>
      
          <div id="img">
                 <div class="bannertext">
@@ -88,18 +89,23 @@
     <!-- //script -->
     <script>
     var navcolor = document.querySelector('.navcontrl')//nav底色
-    var logo_chang_b = document.querySelector('.maslogo_b') //logo滑動
-    var logo_chang_w = document.querySelector('.maslogo_w')
+    var logo_move= document.querySelector('#logo_white')
     window.addEventListener('scroll',mmm)
 
-
     function mmm (e){
-    console.log(e)
-    if(document.body.scrollTop > 600 || document.documentElement.scrollTop > 600){
-        
-        logo_chang_w.classList.add('logo_white')
-        logo_chang_b.classList.add('logo_black')
+    if(document.body.scrolltop < 499 || document.documentElement.scrollTop < 499){
 
+            if(logo_move.className === ('logo_Left')){
+               logo_move.classList.add('logo_right')
+               logo_move.classList.remove('logo_Left')
+              }
+      }
+       
+    if(document.body.scrolltop > 500 || document.documentElement.scrollTop > 500){
+
+        logo_move.classList.add('logo_Left')//logomove
+        logo_move.classList.remove('logo_right') 
+    
         navcolor.style.backgroundColor= "rgba(230, 228, 228, 0.952)"//nav底色
         
         document.querySelectorAll('.navbartext').forEach(fontcolor => { //右邊電話
@@ -119,9 +125,11 @@
             linecolor.classList.add('bg_line_red')
             linecolor.classList.remove('bg_line_white')
         })
-    }else{
+      
+       
+    }else{  
         
-
+        
         navcolor.style.backgroundColor= "#ffffff13"//nav底色
 
         document.querySelectorAll('.navbartext').forEach(fontcolor => { //右邊電話 
@@ -144,8 +152,8 @@
         })
        
         }
+
     }
-    
     </script>
 </body>
 </html>
