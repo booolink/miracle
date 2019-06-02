@@ -39,15 +39,15 @@
                     </div>
         </div>
      
-         <div id="img">
+         <div id="img" data-name="img_scale">
                 <div class="bannertext">
-                    <h3 id="bannertext3">8年超過 <i id="h3_color">5,000 </i>家企業選擇</h3>
-                    <h1 id="bannertext1">誰說價格和品質</h1>
-                    <h2 id="bannertext2">不能兼顧</h2>
+                    <h3 id="bannertext3" data-name="bannertext">8年超過 <i id="h3_color">5,000 </i>家企業選擇</h3>
+                    <h1 id="bannertext1" data-name="bannertext">誰說價格和品質</h1>
+                    <h2 id="bannertext2" data-name="bannertext">不能兼顧</h2>
                     <br>
-                    <h4 id="bannertext4">擁有一個具『行銷力』的網站，只要</h4>
-                    <h4 id="bannertext5">NT$ <yy id="yy">7999</yy> 元/年</h4>
-                    <div class="img_but">了解更多</div>
+                    <h4 id="bannertext4" data-name="bannertext1">擁有一個具『行銷力』的網站，只要</h4>
+                    <h4 id="bannertext5" data-name="bannertext1">NT$ <yy id="yy">7999</yy> 元/年</h4>
+                    <div class="img_but" data-name="bannertext1">了解更多</div>
                 </div> 
         </div>
     </nav>
@@ -55,10 +55,10 @@
     <div class="bisnislogo">
        <div class="title_all">
         <div class="mttitle">
-            <h2 class="mt_h2">知名企業的共同選擇</h2>
-            <div class="redbottom"></div>
+            <h2 class="mt_h2" data-name="bannertext">知名企業的共同選擇</h2>
+            <div class="redbottom" data-name="bannertext"></div>
         </div>
-        <div class="logo_all">
+        <div class="logo_all" data-name="bannertext1">
             <div id="logolist1" class="logolist"></div>
             <div id="logolist2" class="logolist"></div>
             <div id="logolist3" class="logolist"></div>
@@ -93,15 +93,16 @@
     window.addEventListener('scroll',mmm)
 
     function mmm (e){
-    if(document.body.scrolltop < 499 || document.documentElement.scrollTop < 499){
-
-            if(logo_move.className === ('logo_Left')){
+    if(document.body.scrolltop < 500 || document.documentElement.scrollTop < 500){
+       
+            if(logo_move.className === ('logo_Left')){//logomove
                logo_move.classList.add('logo_right')
                logo_move.classList.remove('logo_Left')
               }
       }
        
-    if(document.body.scrolltop > 500 || document.documentElement.scrollTop > 500){
+    if(document.body.scrolltop >= 500 || document.documentElement.scrollTop >= 500){
+        
 
         logo_move.classList.add('logo_Left')//logomove
         logo_move.classList.remove('logo_right') 

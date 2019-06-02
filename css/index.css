@@ -36,6 +36,7 @@ a{
     box-shadow: 0px 0px 5px #585858;
     display: flex;
     justify-content: space-between;
+    z-index: 900;
 }
 .navbar{
     width: 65%;
@@ -64,7 +65,9 @@ a{
    background-image: url('../images/logo-white.png');
    background-size: contain;
    background-repeat: no-repeat;
-   position: absolute;  
+   position: absolute;
+   opacity: 1;
+   transition: .3s;
 }
 #logo_white::before{
     content: '';
@@ -76,6 +79,8 @@ a{
     height: 40px;
     top: -2px;
     left: 160px;
+    opacity: 0;
+    transition: .3s;
 }
 /* .logo_black{
     width: 150px;
@@ -89,11 +94,13 @@ a{
 
 .logo_Left {
     animation: logo_Left_ani 400ms linear;
-    animation-fill-mode: forwards;  
+    animation-fill-mode: forwards;
+    opacity: 1;
  }
+
  .logo_right {
     animation: logo_right_ani 400ms linear;
-    animation-fill-mode: forwards;  
+    animation-fill-mode: forwards;
  }
 
 
@@ -101,10 +108,11 @@ a{
 @keyframes logo_Left_ani{
     0%{
         left: 0px;
+        
     }
     100%{
         left:-161px;
-
+    
     }
 }
 /*maslogo 向右滑動*/
@@ -176,6 +184,22 @@ a{
     background-image: url('../images/banner_bg.png');
     background-size: cover;
     background-repeat: no-repeat;   
+}
+[data-name="img_scale"]{
+    animation: img_scale .3s linear;
+    /* animation-fill-mode: forwards; */
+    
+
+}
+@keyframes img_scale{
+    0%{
+       opacity: 0; 
+       transform: scale(1.1,1.1)
+    }
+    100%{
+        opacity: 1; 
+        transform: scale(1,1)
+     }
 }
 .img_but{
     width: 100px;
@@ -272,7 +296,31 @@ a{
     width: 80%;
     margin: auto;
     padding-top: 150px;
-    color: white;
+    color: white; 
+}
+[data-name="bannertext"]{ 
+ animation: ban_text .5s linear;
+ animation-fill-mode: forwards;
+}
+[data-name="bannertext1"]{ 
+    animation: ban_text .5s linear;
+    animation-fill-mode: forwards;
+    animation-delay: .2s;
+    opacity: 0;
+   }
+@keyframes ban_text {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    20% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }
 #bannertext1{
     font-size: 70px;
@@ -401,3 +449,4 @@ height: 900px;
     width: 100%;
     height: 3px;
 }
+
