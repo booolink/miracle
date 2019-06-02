@@ -79,18 +79,8 @@ a{
     height: 40px;
     top: -2px;
     left: 160px;
-    opacity: 0;
-    transition: .3s;
+  
 }
-/* .logo_black{
-    width: 150px;
-    height: 40px;
-    background-image: url('../images/logo_blk.png');
-    background-size: contain;
-    background-repeat: no-repeat; 
-    position: absolute;
-    left: 160px;
- } */
 
 .logo_Left {
     animation: logo_Left_ani 400ms linear;
@@ -216,7 +206,6 @@ a{
     color: white;
 }
 
-
 #nav_li6{
     position: relative;
 }
@@ -291,6 +280,35 @@ a{
         border-bottom: 0.3px solid  #e84185;
     }
 }
+
+.right_menu{
+    width: 10px;
+    position: fixed;
+    right: 30px;
+    color: white;
+    font-size: 12px;
+    top: 150px;
+    
+}
+.menulist_r{
+    width: 18px;
+    height: 41px;
+    border-radius: 15px;
+    margin-top: 10px;
+    padding-top:5px;
+    text-align: center;
+    line-height: 15px;
+    background-color: #999;
+}
+.menulist_r:hover{
+    cursor: pointer;
+}
+.menulist_r:active{
+    background-color: #e84185;
+}
+
+
+
 /*----------------box1 內文字------------------------------*/ 
 .bannertext{
     width: 80%;
